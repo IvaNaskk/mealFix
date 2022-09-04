@@ -74,6 +74,7 @@
 <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
     {% for recept in recepti %}
         {% if recept.myrecipes == 4 %}
+                <a style="color: white" href="/mealFix/recept/{{ recept.id }}">
         <div class="card recept-bt" style="width:300px; margin: 10px; height: 490px; background-color: #213C32;border-radius: 20px">
   <img src="{{ MEDIA_URL }}{{ recept.image.url }}" class="card-img-top" alt="..." style="border-radius: 20px">
   <div class="card-body" style="display: flex; color: white">
@@ -85,6 +86,7 @@
       </div>
   </div>
 </div>
+    </a>
             {% endif %}
     {% endfor %}
 </div>
