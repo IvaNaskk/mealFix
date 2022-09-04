@@ -9,7 +9,7 @@ urlpatterns = [
     path("home", views.recepti, name="home"),
     path("recept/<str:id_recept>", views.recept),
     path("register/", views.register_request, name="register"),
-    path("login/", views.login_request, name="login"),
+    path("", views.login_request, name="login"),
     path("logout/", views.logout_request, name="logout"),
     path("forgot/", views.forgotpasspage, name="forgot"),
     path("profile/", views.profilepage, name="profile"),
