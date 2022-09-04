@@ -93,7 +93,7 @@ def resultpage(request, id_course):
 def logout_request(request):
     logout(request)
     messages.info(request, "You have successfully logged out.")
-    return redirect("main:homepage")
+    return redirect("main:login")
 
 def recepti(request):
     queryset = Recept.objects.all()
