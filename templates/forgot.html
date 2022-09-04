@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forgot Password</title>
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}" >
+<script src="{% static '/js/bootstrap.js' %}"></script>
+    <style>
+        body{
+            background: #012622;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        #n{
+            color:#D3EFBD;
+            font-size: 400%;
+            font-weight: bolder;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+{#back#}
+<div class="container col-12">
+<div id="sp" style="display: flex; justify-content: space-between;">
+    <br>
+    <p style="flex-basis: 97.5%; font-weight: bolder;"><a href="/mealFix/login" style="text-align: left;font-size: 400%;color: #FCEFCE; text-decoration: none">←</a></p>
+</div>
+<br>
+<br>
+<br>
+
+{#resetpw#}
+<div class="container col-10">
+
+    <p id="n">Reset Password</p>
+    <div class="d-grid gap-2 col-10 mx-auto log-bt">
+        <input type="text" class="form-control" placeholder="Email">
+    </div>
+    <br>
+    <div class="d-grid gap-2 col-10 mx-auto log-bt">
+        <button id="req"  class="row btn log-bt btn-lg" type="submit"><a id="sign-t" href="#" style="text-decoration: none; color: white">Request Reset</a></button>
+    </div>
+</div>
+</div>
+</body>
+</html>

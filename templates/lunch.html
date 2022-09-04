@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lunch</title>
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}" >
+<script src="{% static '/js/bootstrap.js' %}"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <style>
+        body{
+            background: #012622;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        search{
+            color: #FCEFCE;
+        }
+        .nav-link:hover{
+            background-color: #F6A90A;
+            color: white;
+            border-radius: 9px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            color:white;
+        }
+        .nav-link{
+            text-align: center;
+            font-weight: bolder;
+        }
+        .float-container {
+            padding: 20px;
+        }
+        .float-child1 {
+            width: 700px;
+            float: left;
+        }
+        #leftbox {
+            float:left;
+            width:10%;
+        }
+        #middlebox{
+            float: left;
+            width:80%;
+        }
+        #rightbox{
+            float:right;
+            width:25%;
+        }
+        .card-img-top{
+            padding: 7px;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            width: 298px;
+            height: 320px;
+            background-size: cover;
+        }
+        #x {
+            position: absolute;
+            color: white;
+            background-color: #BF4E49;
+            font-size: 25px;
+            font-weight: bolder;
+            width: 50px;
+            top: 110px;
+            right: 450px;
+            border-radius: 25px;
+        }
+</style>
+<body>
+<div class="container col-12">
+{% load static %}
+
+{#search#}
+<div class="container col-12">
+
+<div id="boxes" class="row-cols-lg-2 mx-auto float-container" style="align-items: center; align-content: center; text-align: center; display: flex">
+    <div id="leftbox">
+        <a href="/mealFix/home" style="color: #FFCA55; font-weight: bolder; font-size: 35px">X</p>
+        </a>
+    </div>
+  <div id="middlebox" class="col-lg-10 float-child1">
+      <a href="">
+        <input href="/mealFix/profile" type="text" value="Search" class="form-control rounded-5" placeholder="Search" style="background-color: #709174; text-align: left; color: #FCEFCE; font-weight: bolder">
+      </a>
+  </div>
+  <div id="rightbox" class="col-sm float-child2">
+        <button class="btn btn-success rounded-circle" type="submit">
+            <i class="fa fa-search"></i>
+        </button>
+  </div>
+</div>
+
+<div class="float-container col-10">
+    <button id="x" class="btn"><a href="/mealFix/search">X</a></button>
+    <button class="btn btn-lg" style="color: white; font-size: 43px; background-color: #F4BD51; border-radius: 30px; width: 280px">Lunch</button>
+</div>
+
+{#najdenirecepti#}
+<div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+    {% for recept in recepti %}
+        {% if recept.bigsix == 3 %}
+        <div class="card recept-bt" style="width:300px; margin: 10px; height: 490px; background-color: #213C32;border-radius: 20px">
+  <img src="{{ MEDIA_URL }}{{ recept.image.url }}" class="card-img-top" alt="..." style="border-radius: 20px">
+  <div class="card-body" style="display: flex; color: white">
+      <div  class=" float-start">
+         <p class="card-title" style="font-size: 50px; text-align: left">{{ recept.title }}</p>
+      </div>
+      <div class="float-end mx-auto" >
+        <a href="#" class="btn btn-lg" style="font-size: 20px;"><img src="{% static "/img/like.svg" %}"></a>
+      </div>
+  </div>
+</div>
+            {% endif %}
+    {% endfor %}
+</div>
+
+
+<br>
+<br>
+
+{#navbar#}
+<div class="navbar fixed-bottom navbar-expand-lg float-container text-center">
+    <div class="container text-center" style="background-color: #D3EFBD; border-radius: 25px;  width: 2000px; height: 100px; align-content: center">
+
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/home.svg' %}" alt="logo" class="text-center">
+            <a class="nav-link" href="/mealFix/home" style="background-color: #F6A90A; border-radius: 9px; color: white">Home</a>
+        </div>
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/books.svg' %}" alt="logo">
+            <a class="nav-link" href="/mealFix/course">Courses</a>
+        </div>
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/fav.svg' %}" alt="logo">
+            <a class="nav-link" href="/mealFix/myrecipes">My Recipes</a>
+        </div>
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/profil.svg' %}" alt="logo"></a>
+            <a class="nav-link" href="/mealFix/profile">Profile</a>
+        </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>

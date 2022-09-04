@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz 2</title>
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}" >
+<script src="{% static '/js/bootstrap.js' %}"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <style>
+        body{
+            background: #012622;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        search{
+            color: #FCEFCE;
+        }
+        .nav-link:hover{
+            background-color: #F6A90A;
+            color: white;
+            border-radius: 9px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            color:white;
+        }
+        .nav-link{
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        .float-container {
+            padding: 20px;
+        }
+
+</style>
+<body>
+<div class="container col-12">
+{% load static %}
+
+{#naslov#}
+
+<div class="container col-12">
+
+<div id="sp" style="display: flex; justify-content: space-between; border-radius: 25px; background-color: #709174;">
+    <br>
+
+{#    backnacoursebtn#}
+    <p style="flex-basis: 5.5%; font-weight: bolder;"><a href="/mealFix/course/{{ oneCourse.id }}/quiz1" style="text-align: left;font-size: 400%;color: #D3EFBD; text-decoration: none">←</a></p>
+
+{#    naslov#}
+    <p style="color: #FCEFCE; text-align: center; font-size: 400%;flex-basis: 100%; color: #FEC653" class="fw-bolder">Quiz for {{ oneCourse.title }}</p>
+</div>
+</div>
+
+<div class="float-container col-12 gap-4" style="text-align: center">
+    <div class="float-container col-12 mx-auto" style="border-radius: 30px; color: white; background-color: #213C32; font-size: 40px; font-weight: bolder; text-align: center">
+        <br>
+        <p>Question 2</p>
+        <br>
+    </div>
+    <br>
+    <a href="/mealFix/course/{{ oneCourse.id }}/quiz3">
+        <button class="float-container col-12 mx-auto" style="border-radius: 30px; color: white; background-color: #365542; font-size: 40px; font-weight: bolder; text-align: center">
+            <p>Answer 1</p>
+        </button>
+    </a>
+    <br><br>
+    <a href="/mealFix/course/{{ oneCourse.id }}/quiz3">
+        <button class="float-container col-12 mx-auto" style="border-radius: 30px; color: white; background-color: #4B674E; font-size: 40px; font-weight: bolder; text-align: center">
+            <p>Answer 2</p>
+        </button>
+    </a>
+    <br><br>
+    <a href="/mealFix/course/{{ oneCourse.id }}/quiz3">
+        <button class="float-container col-12 mx-auto" style="border-radius: 30px; color: white; background-color: #365542; font-size: 40px; font-weight: bolder; text-align: center">
+            <p>Answer 3</p>
+        </button>
+    </a>
+     <br><br>
+    <a href="/mealFix/course/{{ oneCourse.id }}/quiz3">
+        <button class="float-container col-12 mx-auto" style="border-radius: 30px; color: white; background-color: #4B674E; font-size: 40px; font-weight: bolder; text-align: center">
+            <p>Answer 4</p>
+        </button>
+    </a>
+</div>
+
+<br>
+<br>
+
+{#navbar#}
+<div class="navbar fixed-bottom navbar-expand-lg float-container text-center">
+    <div class="container text-center" style="background-color: #D3EFBD; border-radius: 25px;  width: 2000px; height: 100px; align-content: center">
+
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/home.svg' %}" alt="logo" class="text-center">
+            <a class="nav-link" href="/mealFix/home">Home</a>
+        </div>
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/books.svg' %}" alt="logo">
+            <a class="nav-link" href="/mealFix/course" style="background-color: #F6A90A; border-radius: 9px; color: white">Courses</a>
+        </div>
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/fav.svg' %}" alt="logo">
+            <a class="nav-link" href="/mealFix/myrecipes">My Recipes</a>
+        </div>
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/profil.svg' %}" alt="logo"></a>
+            <a class="nav-link" href="/mealFix/profile">Profile</a>
+        </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</body>
+</html>

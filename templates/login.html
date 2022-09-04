@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}" >
+<script src="{% static '/js/bootstrap.js' %}"></script>
+    <style>
+        body{
+            background: #012622;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        #sign-t{
+            color: white;
+            text-decoration: none;
+        }
+        #fpass{
+            color:#F39237;
+            text-decoration: none;
+        }
+        .loginfrm{
+            color: white;
+            text-align: left;
+            font-size: large;
+            font-weight: bold;
+            color:#D3EFBD;
+        }
+    </style>
+</head>
+<body>
+<div class="container col-12">
+
+<div class="log">
+
+{% load crispy_forms_tags %}
+    <div class="align-content-center text-center">
+
+        <br>
+        <br>
+
+        {% load static %}
+
+{#        logo#}
+        <img src="{% static "img/logo.svg" %}" alt="logo">
+
+        <br>
+
+        <div class="text-center">
+
+            <h1 style="color: #F39237; font-weight: 400; font-size: 50px; align-content: center">Log In</h1>
+        </div>
+    </div>
+
+{#    loginforma#}
+    <div class="align-content-center text-center container py-3 col-9">
+                {% load static %}
+
+        <form method="POST" class="loginfrm">
+
+            {% csrf_token %}
+            <div id="un">
+                {{ login_form.username|as_crispy_field }}
+            </div>
+
+            <div id="pw">
+                {{ login_form.password|as_crispy_field }}
+            </div>
+            <br>
+
+{#            loginbtn or signbtn#}
+            <div class="d-grid gap-2 col-11 mx-auto">
+                <button id="log-bt" class="row btn log-bt btn-lg" type="submit">Login</button>
+                <button id="sing-bt" class="row btn sign-bt btn-lg" type="submit"><a id="sign-t" href="/mealFix/register">Sign Up</a></button>
+            </div>
+            <br>
+
+{#            forgetpwbtn#}
+            <div>
+                <p  id="fpass" class="d-grid gap-2 col-5 mx-auto log-bt">
+                    <a href="/mealFix/forgot" style="text-align: center;text-decoration: none; color: #F39237; font-weight: lighter">Forgot Password ?</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

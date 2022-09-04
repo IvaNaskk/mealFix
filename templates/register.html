@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}" >
+<script src="{% static '/js/bootstrap.js' %}"></script>
+<style>
+        body{
+            background: #012622;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        #sp{
+            background-color: #F19F50;
+        }
+        .loginfrm{
+            color:#D3EFBD;
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+</style>
+</head>
+<body>
+{% load crispy_forms_tags %}
+<div class="container col-10">
+
+<div id="sp" style="display: flex; justify-content: space-between; border-radius: 25px; ">
+    <br>
+
+{#    backnaloginbtn#}
+    <p style="flex-basis: 5.5%; font-weight: bolder;"><a href="/mealFix/login" style="text-align: left;font-size: 400%;color: #FCEFCE; text-decoration: none">←</a></p>
+
+{#    naslov#}
+    <p style="color: #FCEFCE; text-align: center; font-size: 400%;flex-basis: 100%;" class="fw-bolder">Sign Up</p>
+</div>
+
+<div class="container py-5">
+
+{#    registerforma#}
+	<form method="POST" class="loginfrm">
+		{% csrf_token %}
+        <div>
+            {{ register_form.email|as_crispy_field }}
+        </div>
+        <div>
+            {{ register_form.first_name|as_crispy_field }}
+        </div>
+        <div>
+            {{ register_form.last_name|as_crispy_field }}
+        </div>
+        <div>
+            {{ register_form.username|as_crispy_field }}
+        </div>
+        <div>
+            {{ register_form.birth_date|as_crispy_field }}
+        </div>
+        <div>
+            {{ register_form.password1|as_crispy_field }}
+        </div>
+        <div>
+            {{ register_form.password2|as_crispy_field }}
+        </div>
+
+
+{#    registerbtn#}
+    <div class="d-grid gap-2 col-12 pt-2 align-content-center">
+        <button class="btn log-bt btn-lg" role="button"><a href="/mealFix/login" style="font-size: 30px; color:white; text-decoration: none; font-weight: bolder">Confirm</a></button>
+    </div>
+        </form>
+</div>
+</div>
+</body>
+</html>

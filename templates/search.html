@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}" >
+<script src="{% static '/js/bootstrap.js' %}"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <style>
+        body{
+            background: #012622;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        search{
+            color: #FCEFCE;
+        }
+        .nav-link:hover{
+            background-color: #F6A90A;
+            color: white;
+            border-radius: 9px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            color:white;
+        }
+        .nav-link{
+            text-align: center;
+            font-weight: bolder;
+        }
+        .float-container {
+            padding: 20px;
+        }
+        .float-child1 {
+            width: 700px;
+            float: left;
+        }
+        #leftbox {
+            float:left;
+            width:10%;
+        }
+        #middlebox{
+            float: left;
+            width:80%;
+        }
+        #rightbox{
+            float:right;
+            width:25%;
+        }
+        .card-horizontal {
+            display: flex;
+            flex: 1 1 auto;
+        }
+</style>
+</head>
+<br>
+<body>
+{#search#}
+<div class="container col-12">
+
+<div id="boxes" class="row-cols-lg-2 mx-auto float-container" style="align-items: center; align-content: center; text-align: center; display: flex">
+    <div id="leftbox">
+        <a href="/mealFix/home" style="color: #FFCA55; font-weight: bolder; font-size: 35px">X</p>
+        </a>
+    </div>
+  <div id="middlebox" class="col-lg-10 float-child1">
+      <a href="">
+        <input href="/mealFix/profile" type="text" value="Search" class="form-control rounded-5" placeholder="Search" style="background-color: #709174; text-align: left; color: #FCEFCE; font-weight: bolder">
+      </a>
+  </div>
+  <div id="rightbox" class="col-sm float-child2">
+        <button class="btn btn-success rounded-circle" type="submit">
+            <i class="fa fa-search"></i>
+        </button>
+  </div>
+</div>
+
+</div>
+{#tip hrana#}
+<div class="container col-12">
+    <div class="float-container">
+<div class="card-group gap-sm-4" style="padding: 20px">
+  <div class="card" style="border-radius: 25px;background-color: #365849;">
+    <div class="card-horizontal">
+        <div class="img-square-wrapper">
+            <img style="width: 100px; height: 120px" src="{% static "/img/breakfast.svg" %}" alt="Card image cap">
+        </div>
+        <div class="card-body float-end">
+            <br>
+            <h1 class="card-title" style="font-size: 40px; color: #F6A90A;"><a style="color: #F6A90A" href="/mealFix/search/breakfast">Breakfast</a></h1>
+        </div>
+    </div>
+</div>
+  <div class="card" style="border-radius: 25px;background-color: #365849;">
+    <div class="card-horizontal">
+        <div class="img-square-wrapper">
+            <img style="width: 120px; height: 120px" src="{% static "/img/snacks.svg" %}" alt="Card image cap">
+        </div>
+        <div class="card-body float-end">
+            <br>
+            <h1 class="card-title" style="font-size: 40px; color: #F6A90A;"><a style="color: #F6A90A" href="/mealFix/search/snacks">Snacks</a></h1>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="card-group gap-sm-4" style="padding: 20px">
+  <div class="card" style="border-radius: 25px;background-color: #365849;">
+    <div class="card-horizontal">
+        <div class="img-square-wrapper">
+            <img style="width: 130px; height: 130px" src="{% static "/img/lunch.svg" %}" alt="Card image cap">
+        </div>
+        <div class="card-body float-end">
+            <br>
+            <h1 class="card-title" style="font-size: 40px; color: #F6A90A;"><a style="color: #F6A90A" href="/mealFix/search/lunch">Lunch</a></h1>
+        </div>
+    </div>
+</div>
+  <div class="card" style="border-radius: 25px;background-color: #365849;">
+    <div class="card-horizontal">
+        <div class="img-square-wrapper">
+            <img style="width: 100px; height: 120px; padding: 10px" src="{% static "/img/30min.svg" %}" alt="Card image cap">
+        </div>
+        <div class="card-body float-end">
+            <h1 class="card-title" style="font-size: 35px;"><a style="color: #F6A90A" href="/mealFix/search/under30mins">Under 30 Minutes</a></h1>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="card-group gap-sm-4" style="padding: 20px">
+  <div class="card" style="border-radius: 25px;background-color: #365849;">
+    <div class="card-horizontal">
+        <div class="img-square-wrapper">
+            <img style="width: 130px; height: 130px" src="{% static "/img/dinner.svg" %}" alt="Card image cap">
+        </div>
+        <div class="card-body float-end">
+            <br>
+            <h1 class="card-title" style="font-size: 40px; color: #F6A90A;"><a style="color: #F6A90A" href="/mealFix/search/dinner">Dinner</a></h1>
+        </div>
+    </div>
+</div>
+  <div class="card" style="border-radius: 25px;background-color: #365849;">
+    <div class="card-horizontal">
+        <div class="img-square-wrapper">
+            <img style="width: 100px; height: 130px" src="{% static "/img/desserts.svg" %}" alt="Card image cap">
+        </div>
+        <div class="card-body float-end">
+            <br>
+            <h1 class="card-title" style="font-size: 40px; color: #F6A90A;"><a style="color: #F6A90A" href="/mealFix/search/desserts">Desserts</a></h1>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+{#    podnaslov#}
+<div class="container col-12">
+<div class="float-container row gap-sm-4">
+<div style="align-content: flex-start; font-size: 50px; color: #D3EFBD; font-weight: bolder">
+        <p>Type of Diet</p>
+    </div>
+    {% for tip in typeofdiet %}
+
+        <div class="col-3 gap-md-2">
+            <button type="button" class="btn btn-success btn-lg" style="width: 190px; height: 70px; background-color: #EA721B; border-radius: 30px; font-size: 22px;font-weight: bolder;"><a href="/mealFix/search/typeofdiet/{{ tip.id }}">{{ tip.title }}</a></button>
+        </div>
+
+    {% endfor %}
+</div>
+
+    <br>
+
+<div>
+    <img src="{% static '/img/top.png' %}" style="width: 100%;height: 80px">
+</div>
+
+{#podnaslov#}
+<div class="float-container row gap-sm-4">
+<div style="align-content: flex-start; font-size: 50px; color: #D3EFBD; font-weight: bolder">
+        <p>Cuisine</p>
+    </div>
+    {% for cus in cuisine %}
+
+        <div class="col-3 gap-md-2">
+            <button type="button" class="btn btn-success btn-lg" style="width: 190px; height: 70px; background-color: #EA721B; border-radius: 30px;font-size: 22px;font-weight: bolder;"><a href="/mealFix/search/cuisine/{{ cus.id }}">{{ cus.title }}</a></button>
+        </div>
+
+    {% endfor %}
+</div>
+
+<br>
+
+<div>
+    <img src="{% static '/img/top.png' %}" style="width: 100%;height: 80px">
+</div>
+
+{#podnaslov#}
+<div class="float-container row gap-sm-4">
+<div style="align-content: flex-start; font-size: 50px; color: #D3EFBD; font-weight: bolder">
+        <p>Dish Style</p>
+    </div>
+    {% for dis in dish %}
+
+        <div class="col-3 gap-md-2">
+            <button type="button" class="btn btn-success btn-lg" style="width: 190px; height: 80px; background-color: #EA721B; border-radius: 30px;font-size: 22px;font-weight: bolder;"><a href="/mealFix/search/dish/{{ dis.id }}">{{ dis.title }}</a></button>
+        </div>
+
+    {% endfor %}
+</div>
+
+<br>
+<br>
+
+{#navbar#}
+<div class="navbar fixed-bottom navbar-expand-lg float-container text-center">
+    <div class="container text-center" style="background-color: #D3EFBD; border-radius: 25px;  width: 2000px; height: 100px; align-content: center">
+
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/home.svg' %}" alt="logo" class="text-center">
+            <a class="nav-link" href="/mealFix/home" style="background-color: #F6A90A; border-radius: 9px; color: white">Home</a>
+        </div>
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/books.svg' %}" alt="logo">
+            <a class="nav-link" href="/mealFix/course">Courses</a>
+        </div>
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/fav.svg' %}" alt="logo">
+            <a class="nav-link" href="/mealFix/myrecipes">My Recipes</a>
+        </div>
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/profil.svg' %}" alt="logo"></a>
+            <a class="nav-link" href="/mealFix/profile">Profile</a>
+        </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</body>
+</html>

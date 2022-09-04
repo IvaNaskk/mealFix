@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My recipes</title>
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}" >
+<script src="{% static '/js/bootstrap.js' %}"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <style>
+    body{
+        background: #012622;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .nav-link:hover{
+        background-color: #F6A90A;
+        color: white;
+        border-radius: 9px;
+    }
+    a{
+        text-decoration: none;
+    }
+    .nav-link{
+        text-align: center;
+        font-weight: bolder;
+    }
+</style>
+</head>
+<body>
+<div class="container col-12">
+
+{#glavan naslov#}
+<div class="container col-lg-10">
+    <p style="text-align: center; font-size: 90px; background-color: #709174; color: #FEC653; border-radius: 25px; width: 100%; align-content: center">My Recipes</p>
+</div>
+</div>
+
+
+<div class="container col-12">
+<div class="row row-cols-1 gap-2">
+  <div class="col">
+  <div class="card text-center" *ngFor="let event of eventActivities" style="border-radius: 25px;background-color: #365849; height: 180px">
+      <a href="/mealFix/myrecipes/desserts">
+    <div class="card-header" style="font-size: 40px; color: #F6A90A; text-align: left; font-weight: bolder">
+        <img style="width: 320px; height: 160px; border-radius: 20px" src="{% static "/img/desserts-slika.svg" %}" alt="Card image cap">
+        Desserts </div>
+      </a>
+</div>
+  </div>
+    <div class="col">
+        <div class="card text-center" *ngFor="let event of eventActivities" style="border-radius: 25px;background-color: #365849; height: 180px">
+            <a href="/mealFix/myrecipes/breakfast">
+    <div class="card-header" style="font-size: 40px; color: #F6A90A; text-align: left; font-weight: bolder">
+        <img style="width: 320px; height: 160px; border-radius: 20px" src="{% static "/img/breakfast-slika.svg" %}" alt="Card image cap">
+        Breakfast </div>
+            </a>
+</div>
+    </div>
+    <div class="col">
+  <div class="card text-center" *ngFor="let event of eventActivities" style="border-radius: 25px;background-color: #365849; height: 180px">
+      <a href="/mealFix/myrecipes/appetizers">
+    <div class="card-header" style="font-size: 40px; color: #F6A90A; text-align: left; font-weight: bolder">
+        <img style="width: 320px; height: 160px; border-radius: 20px" src="{% static "/img/appetizers-slika.svg" %}" alt="Card image cap">
+        Appetizers </div>
+      </a>
+</div>
+  </div>
+  <div class="col">
+  <div class="card text-center" *ngFor="let event of eventActivities" style="border-radius: 25px;background-color: #365849; height: 180px">
+      <a href="/mealFix/myrecipes/lunch">
+    <div class="card-header" style="font-size: 40px; color: #F6A90A; text-align: left; font-weight: bolder">
+        <img style="width: 320px; height: 160px; border-radius: 20px" src="{% static "/img/lunch-slika.svg" %}" alt="Card image cap">
+        Lunch </div>
+      </a>
+</div>
+  </div>
+</div>
+</div>
+
+
+<br><br><br><br><br><br><br><br><br>
+
+{#navbar#}
+<div class="navbar fixed-bottom navbar-expand-lg float-container text-center">
+    <div class="container text-center" style="background-color: #D3EFBD; border-radius: 25px;  width: 2000px; height: 100px; align-content: center">
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/home.svg' %}" alt="logo" class="text-center">
+            <a class="nav-link" href="/mealFix/home" >Home</a>
+        </div>
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/books.svg' %}" alt="logo">
+            <a class="nav-link" href="/mealFix/course">Courses</a>
+        </div>
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/fav.svg' %}" alt="logo">
+            <a class="nav-link" href="#" style="background-color: #F6A90A; border-radius: 9px; color: white">My Recipes</a>
+        </div>
+        <div class="nav-item">
+            <img id="image" src="{% static '/img/icons/profil.svg' %}" alt="logo"></a>
+            <a class="nav-link" href="/mealFix/profile">Profile</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
