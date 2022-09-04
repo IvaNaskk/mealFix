@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Breakfast</title>
+    <title>Under 30 Minutes</title>
 {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.css' %}" >
 <script src="{% static '/js/bootstrap.js' %}"></script>
@@ -105,6 +105,7 @@
 <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
     {% for recept in recepti %}
         {% if recept.time <= 30%}
+           <a style="color: white" href="/mealFix/recept/{{ recept.id }}">
         <div class="card recept-bt" style="width:300px; margin: 10px; height: 490px; background-color: #213C32;border-radius: 20px">
   <img src="{{ MEDIA_URL }}{{ recept.image.url }}" class="card-img-top" alt="..." style="border-radius: 20px">
   <div class="card-body" style="display: flex; color: white">
@@ -116,6 +117,7 @@
       </div>
   </div>
 </div>
+    </a>
             {% endif %}
     {% endfor %}
 </div>
